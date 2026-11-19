@@ -17,19 +17,32 @@ Ce notebook contient deux parties :
 
 ```
 architecture_transformer.ipynb      # le notebook
-household_power_consumption.txt     # données de l'exercice 1
 corpus.txt                          # texte de l'exercice 2
+household_power_consumption.txt     # données de l'exercice 1 (non versionné, à télécharger)
+pyproject.toml                      # dépendances
+uv.lock                             # versions exactes des dépendances
+.python-version                     # version de Python (3.12)
 README.md
 ```
 
-Les deux fichiers de données doivent être **dans le même dossier que le notebook**.
+- `corpus.txt` : quelques pages de texte en français. Il est inclus dans le dépôt.
+- `household_power_consumption.txt` : dataset *Individual Household Electric Power Consumption* (UCI Machine Learning Repository). Il n'est **pas inclus** dans le dépôt, car il pèse environ 127 Mo, au-delà de la limite de 100 Mo par fichier de GitHub.
 
-- `household_power_consumption.txt` : dataset *Individual Household Electric Power Consumption* (UCI Machine Learning Repository).
-- `corpus.txt` : quelques pages de texte en français.
+Pour l'exercice 1, télécharger l'archive sur la page du dataset (https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption), la décompresser, puis placer `household_power_consumption.txt` **dans le même dossier que le notebook**.
 
 ---
 
 ## Installation
+
+Prérequis : Python 3.12 et [uv](https://docs.astral.sh/uv/).
+
+```bash
+git clone https://github.com/BouthainaBoubou/tp-architecture-transformer.git
+cd tp-architecture-transformer
+uv sync
+```
+
+Sans uv, on peut installer les mêmes bibliothèques avec pip :
 
 ```bash
 pip install torch numpy pandas matplotlib transformers
@@ -41,7 +54,7 @@ pip install torch numpy pandas matplotlib transformers
 
 ## Exécution
 
-Ouvrir le notebook et exécuter les cellules **dans l'ordre**, de haut en bas.
+Ouvrir le notebook avec le kernel `.venv` du projet et exécuter les cellules **dans l'ordre**, de haut en bas.
 
 ---
 
